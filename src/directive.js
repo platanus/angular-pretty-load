@@ -7,6 +7,7 @@
 
   /* ngInject */
   function prettyLoad() {
+    var ALWAYS_CLASS = 'pretty-loader';
     var LOADING_CLASS = 'pretty-loading';
     var LOADED_CLASS = 'pretty-loaded';
 
@@ -28,7 +29,7 @@
     };
 
     var setupOverlay = function(_parent) {
-      var overlay = angular.element('<div class="pretty-load-overlay"></div>');
+      var overlay = angular.element('<div class="pretty-loader-overlay"></div>');
       _parent.append(overlay);
 
       overlay.css({ 
@@ -77,6 +78,8 @@
       link: function(_scope, _element, _attributes) {
         var image = _element.find('img')[0];
         if ( !image ) return false;
+        
+        _element.addClass(ALWAYS_CLASS);
 
         monitorLoadState(_element, image);
         var overlay = setupOverlay(_element);
@@ -84,7 +87,7 @@
         _attributes.$observe('prettyLoadColor', function(color){
           overlay.css({ 
             backgroundColor: color
-          });        
+          });
         });
 
         var recalculateDimensions = function(){
