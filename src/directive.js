@@ -4,7 +4,7 @@
   var INIT_CLASS = 'pretty-load-init';
   var LOADING_CLASS = 'pretty-load-loading';
   var COMPLETED_CLASS = 'pretty-load-completed';
-  
+
   angular
     .module('platanus.prettyLoad')
     .directive('prettyLoad', prettyLoad);
@@ -97,11 +97,14 @@
 
   function setImageSize(_image, _settings) {
     var imageNode = _image[0];
+
+    // should set both sides
     if(_settings.shouldSetImageWidth && _settings.shouldSetImageHeight) {
       imageNode.width = _settings.referenceWidth;
       imageNode.height = _settings.referenceHeight;
     }
-    else {
+    // should set 1 side
+    else if(_settings.shouldSetImageWidth || _settings.shouldSetImageHeight) {
       var ratio = _settings.referenceWidth / _settings.referenceHeight;
 
       if(_settings.shouldSetImageWidth)   imageNode.width = imageNode.clientHeight * ratio;
