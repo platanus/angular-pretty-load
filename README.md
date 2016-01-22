@@ -1,7 +1,7 @@
 Angular Pretty Load directive
 ============
 
-Load your images with style using Angular. An overlay is added, before and during the image load, in the **exact same position and dimensions** of the image.
+Load your images in style using Angular: add an overlay before and during the image load, with the **exact same position and dimensions** of the image.
 
 | Without Angular Pretty Load    | With Angular Pretty Load    |
 | ------------------------------ | --------------------------- |
@@ -26,7 +26,7 @@ angular.module('MyApp', ['platanus.prettyLoad']);
 
 ### Directive in html template
 
-When image width and height are specified in your css
+In order to use the most basic mode, you should specify both the width and height of the image in your CSS
 
 ```html
 <img pretty-load ng-src="http://your.image.jpg">
@@ -34,7 +34,7 @@ When image width and height are specified in your css
 
 #### Unknown image size
 
-When both image dimensions are not specified in css, but somehow, the API your consuming or the server behind could provide the original size.
+If one or both dimensions are not specified in your CSS, but the API you're consuming or the server behind can provide the original size use this:
 
 ```html
 <img ng-src="{{image.src}}"
@@ -43,11 +43,11 @@ When both image dimensions are not specified in css, but somehow, the API your c
   pretty-load-height="{{image.height}}">
 ```
 
-The directive will not override properties given to the image (`width: 100%`), but based on the original ratio, it will complete both width and height.
+The directive will not override properties given to the image (`width: 100%`), but it will complete both width and height based on the original image ratio.
 
 #### Overlay Color
 
-You can set a common overlay color
+You can set a common overlay color for all images:
 
 ```css
 .pretty-load-overlay {
@@ -55,21 +55,21 @@ You can set a common overlay color
 }
 ```
 
-or custom to every image
+or customize it for every image:
 
 ```html
 <img ng-src="{{image.src}}"
   pretty-load
-  pretty-load-width="{{image.src}}"
-  pretty-load-height="{{image.src}}"
+  pretty-load-width="{{image.width}}"
+  pretty-load-height="{{image.height}}"
   pretty-load-color="{{image.color}}">
 ```
 
 #### Overlay Animation
 
-There's absolute freedom on how is the transition from the overlay to the loaded image.
+You have total control on how to handle the CSS transition from the overlay to the final image.
 
-To get the same effect of the demo, set this on your css
+This CSS will give you the same results as the demo:
 
 ```css
 .pretty-load-overlay {
@@ -87,21 +87,15 @@ To get the same effect of the demo, set this on your css
 }
 ```
 
-#### A note about Lazy Loading
-
-`angular-pretty-load` does NOT handle lazy loading of your images, but since it listens to the `naturalWidth` property of your image element, it will work with any lazy loading library that uses the `<img>` element itself.
-
-If you are using Ionic, we recommend the [ion-image-lazy-load](https://github.com/paveisistemas/ionic-image-lazy-load) library. It's the one we are using in the GIF above and it works wonders.
-
 ### CSS Classes
 
-The directive wrap the image with a `inline-block` div. This container will be applied certain classes according to the state of the image inside.
+The directive wraps the image inside an `inline-block` div element.  This container will have the following classes applied according to the state of the image inside:
 
 - `.pretty-load-init`: added when the directive is initialized
-- `.pretty-load-loading`: added when the directive is initialized and it's removed when the image finishes loading
+- `.pretty-load-loading`: added when the directive is initialized and removed when the image finishes loading
 - `.pretty-load-completed`: added when the image finishes loading
 
-These are used in our example CSS and you can use them too to add more elements and display them at will (for example, a spinner icon) or create more complex transitions between these states.
+These are used in our example CSS and you can use them to control additional (for example, a spinner icon) or create more complex transitions between these states.
 
 * Note: `angular-pretty-load` does not handle lazy loading. You would have to use an additional library for that.
 
