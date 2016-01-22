@@ -24,7 +24,7 @@
         var settings = {
           referenceWidth: _scope.prettyLoadWidth,
           referenceHeight: _scope.prettyLoadHeight,
-          referenceColor: _attributes.prettyLoadColor || "white",
+          referenceColor: _attributes.prettyLoadColor,
           shouldSetImageWidth: _element[0].width == 0,
           shouldSetImageHeight: _element[0].height == 0
         };
@@ -64,9 +64,13 @@
     _wrapper.append(overlay);
 
     overlay.css({
-      position: 'absolute',
-      backgroundColor: _referenceColor
+      position: 'absolute'
     });
+
+    if(_referenceColor)
+      overlay.css({
+        backgroundColor: _referenceColor
+      });
 
     return overlay;
   }
