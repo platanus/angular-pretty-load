@@ -1,0 +1,38 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Angular Pretty Load Test</title>
+  <meta name="description" content="Angular Pretty Load Test">
+  <meta name="author" content="Platanus">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+  <script src="../src/index.js"></script>
+  <script src="../src/directive.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body ng-app="prettyLoadDemo">
+
+  <div ng-controller="DemoController as demo">
+
+    <div class="column-1">
+      <img ng-repeat="image in demo.images" class="imagenes" ng-src="{{ image.url }}"
+        pretty-load
+        pretty-load-width="{{ image.width }}"
+        pretty-load-height="{{ image.height }}"
+        pretty-load-color="{{ image.color }}">
+    </div>
+
+    <div class="column-2">
+      <img pretty-load ng-src="https://i.ytimg.com/vi/WiONylGn8Xw/maxresdefault.jpg">
+    </div>
+  </div>
+
+
+</body>
+</html>

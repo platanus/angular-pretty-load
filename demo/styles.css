@@ -1,0 +1,33 @@
+.column-1, .column-2 {
+  width: 49%;
+  float: left;
+  padding: 0.5%;
+}
+
+
+.pretty-load-overlay {
+  opacity: 0;
+}
+
+.pretty-load-loading .pretty-load-overlay {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.pretty-load-completed .pretty-load-overlay {
+  opacity: 0;
+  transition: opacity 1.7s ease;
+}
+
+.column-1 img {
+  width: 100%;
+}
+
+.column-2 img {
+  width: 256px;
+  height: 144px;
+}
+
+.column-2 .pretty-load-overlay {
+  background-color: #5E94A0;
+}
