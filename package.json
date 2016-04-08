@@ -1,7 +1,7 @@
 {
   "name": "angular-pretty-load",
   "description": "",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "devDependencies": {
     "jasmine-core": "^2.2.0",
     "karma": "^0.12.31",
