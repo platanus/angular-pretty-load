@@ -89,7 +89,7 @@ This CSS will give you the same results as the demo:
 
 ### CSS Classes
 
-The directive wraps the image inside an `inline-block` div element.  This container will have the following classes applied according to the state of the image inside:
+The directive wraps the image inside a div element.  This container will have the following classes applied according to the state of the image inside:
 
 - `.pretty-load-init`: added when the directive is initialized
 - `.pretty-load-loading`: added when the directive is initialized and removed when the image finishes loading
