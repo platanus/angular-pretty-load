@@ -1,9 +1,9 @@
 {
   "name": "angular-pretty-load",
-  "version": "0.0.2",
-  "homepage": "",
+  "version": "0.0.4",
+  "homepage": "https://github.com/platanus/angular-pretty-load",
   "authors": [
-    ""
+    "Platanus"
   ],
   "license": "MIT",
   "ignore": [

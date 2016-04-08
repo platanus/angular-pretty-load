@@ -15,15 +15,11 @@
     return {
       restrict: 'A',
 
-      scope: {
-        prettyLoadWidth: '@',
-        prettyLoadHeight: '@'
-      },
 
       link: function(_scope, _element, _attributes) {
         var settings = {
-          referenceWidth: _scope.prettyLoadWidth,
-          referenceHeight: _scope.prettyLoadHeight,
+          referenceWidth: _attributes.prettyLoadWidth,
+          referenceHeight: _attributes.prettyLoadHeight,
           referenceColor: _attributes.prettyLoadColor,
           shouldSetImageWidth: _element[0].width == 0,
           shouldSetImageHeight: _element[0].height == 0
