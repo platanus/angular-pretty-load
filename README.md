@@ -7,6 +7,11 @@ Load your images in style using Angular: add an overlay before and during the im
 | ------------------------------ | --------------------------- |
 | <img src="http://imgur.com/Zy5biXd.gif"> | <img src="http://imgur.com/vXBUNlU.gif"> |
 
+## Angular Pretty is no longer maintained
+
+We will leave the Issues open as a discussion forum only.
+We do not guarantee a response from us in the Issues.
+We are no longer accepting pull requests.
 
 ## Usage
 
