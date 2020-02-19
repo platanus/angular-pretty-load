@@ -17,6 +17,6 @@
     "gulp-uglify": "^1.1.0",
     "jshint-stylish": "^1.0.0",
     "gulp-ng-annotate": "^1.0.0",
-    "npm": "^2.10.1"
+    "npm": "^6.13.7"
   }
 }
